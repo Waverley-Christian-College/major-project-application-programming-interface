@@ -16,3 +16,24 @@ This project teaches you how to use a real-world API (Tiingo) to:
 3. Use the API token provided for you in MS TEAMS
 4. Replace `"your_tiingo_api_token"` in `tiingo_stock_plot.py` with your actual token.
 5. Run the script: `python tiingo_stock_plot.py`
+
+
+Goal: To show and compare certain companies high volatility and low volatility and help users to make decisions
+
+IMPORTANT: The tool ISN'T making decisions for users. It is used to HELP people make decisions.
+
+
+Features:
+
+	- Searches for high volatility or low volatility companies: Bosco Cai
+	- Highlights high volatility and low volatility within a time period
+	- Show multiple graphs for users to compare volatility levels: Marcus M
+	- Comparing companies based on high volatility and low volatility 
+	- Volatility Scoring System: Andrew Carter
+
+
+
+The tool will not only help users highlight significant stock prices changes, it will also give the user insights and visualisation tools
+
+
+
