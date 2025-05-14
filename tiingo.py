@@ -4,12 +4,12 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 # Your Tiingo API token
-API_TOKEN = "API_TOKEN"
+API_TOKEN = "5296eb9cb95697ef016ac7de004f18c24ecfad7c"
 
 # Parameters
-symbol = "NVDA"
-start_date = "2025-01-01"
-end_date = "2025-04-01"
+symbol = "MSFT"
+start_date = "2025-04-23"
+end_date = "2025-04-29"
 
 url = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
 headers = {
@@ -25,6 +25,7 @@ params = {
 # Make the request
 response = requests.get(url, headers=headers, params=params)
 data = response.json()
+print(data)
 
 # Extract dates and closing prices
 dates = [entry["date"][:10] for entry in data]
