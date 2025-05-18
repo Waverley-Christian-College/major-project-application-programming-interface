@@ -26,8 +26,7 @@ params = {
 response = requests.get(url, headers=headers, params=params)
 data= response.json()
 formatted_json = json.dumps(data, indent = 4) #json.dumps allows the json file to be a string
-print(formatted_json) 
-print("test")
+
 
 
 # Extract dates and closing prices
