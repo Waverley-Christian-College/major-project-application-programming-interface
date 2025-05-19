@@ -27,6 +27,9 @@ response = requests.get(url, headers=headers, params=params)
 data= response.json()
 formatted_json = json.dumps(data, indent = 4) #json.dumps allows the json file to be a string
 
+# Search Function
+client = TiingoClient(API_TOKEN)
+fetch_prices = client.get_ticker_price(symbol, start_date, end_date, frequency="daily")
 
 # Extract dates and closing prices
 dates = [entry["date"][:10] for entry in data]
