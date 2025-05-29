@@ -6,8 +6,60 @@ import matplotlib.pyplot as plt
 # Your Tiingo API token
 API_TOKEN = "5296eb9cb95697ef016ac7de004f18c24ecfad7c"
 # Parameters
-symbol = "NVDA"
-symbolw = "TSLA"
+start_date = "2025-01-01"
+end_date = "2025-04-01"
+# Asking user for how many companies
+companies = int(input("How many companies do you want to see? "))
+symbols = []
+# The .upper() code captilizes the users input
+for i in range(companies):
+    symbol = input(f"Enter a company #{i+1}: ").upper()
+    symbols.append(symbol)
+
+fig, ax = plt.subplots(figsize=(12, 6))
+
+for symbol in symbols:
+    url = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
+    headers = {"Authorization": f"Token {API_TOKEN}"}
+    params = {"startDate": start_date, "endDate": end_date, "resampleFreq": "daily"}
+
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
+
+    dates = [item["date"][:10] for item in data]
+    prices = [item["close"] for item in data]
+
+    ax.plot(dates, prices, marker='o', label=symbol)
+# Plot
+title = " & ".join(symbols) + " Closing Prices"
+ax.set_title(title)
+ax.set_xlabel("Date")
+ax.set_ylabel("Close Price (USD)")
+ax.legend()
+ax.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+    
+# What I changed in the code
+'''
+axes[1].set_xlabel("Date")
+'''
+# Label x-axis for the bottom plot only
+plt.tight_layout()
+plt.show()
+
+# Save figure
+plt.savefig("stock_comparison_tiingo.png")
+
+# This is my old line of code that I kept just in case anything wrong
+# The process of developing my code from only showing 2 graphs to any amount of companies the user asks for
+'''
+# Your Tiingo API token
+API_TOKEN = "5296eb9cb95697ef016ac7de004f18c24ecfad7c"
+# Parameters
+symbol = input("What companies do you want? ")
+symbolw = input("Choose another company to compare: ")
+
 start_date = "2025-01-01"
 end_date = "2025-04-01"
 
@@ -62,8 +114,9 @@ plt.show()
 
 # Optionally, save the figure to a file
 plt.savefig("stock_comparison_tiingo.png")
+
 # Plotting
-'''plt.figure(figsize=(20, 5))
+plt.figure(figsize=(20, 5))
 plt.plot(dates, closes, marker='o')
 plt.title(f"{symbol} Closing Prices")
 plt.xlabel("Date")
@@ -86,4 +139,6 @@ plt.tight_layout()
 plt.show()
 plt.tight_layout()
 plt.savefig("stock_chart_tiingo.png")
+url1 = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
+url2 = f"https://api.tiingo.com/tiingo/daily/{symbolw}/prices"
 '''
