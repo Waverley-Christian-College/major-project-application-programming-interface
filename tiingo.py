@@ -5,10 +5,11 @@ import matplotlib.pyplot as plt
 
 # Your Tiingo API token
 API_TOKEN = "5296eb9cb95697ef016ac7de004f18c24ecfad7c"
+print(f"This is my API token {API_TOKEN}")
 
 # Parameters
-symbol = "MSFT"
-start_date = "2025-04-23"
+symbol = "jsdf"
+start_date = "2025-03-23"
 end_date = "2025-04-29"
 
 url = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
@@ -43,4 +44,4 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 plt.tight_layout()
-plt.savefig("stock_chart_tiingo.png")
+plt.savefig("AAPL.png")
