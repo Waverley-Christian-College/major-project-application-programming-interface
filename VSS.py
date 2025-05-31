@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 
 # Your Tiingo API token
 API_TOKEN = "5296eb9cb95697ef016ac7de004f18c24ecfad7c"
-print(f"This is my API token {API_TOKEN}")
 
 # Parameters
 symbol = input("Enter the stock symbol (e.g., AAPL, MSFT): ").upper()
@@ -47,4 +46,4 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 plt.tight_layout()
-plt.savefig("AAPL.png")
+plt.savefig("stock_chart_tiingo.png")
