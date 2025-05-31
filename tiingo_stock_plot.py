@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # --- Tiingo API Configuration ---
 API_TOKEN = "API_TOKEN"  # Replace with your actual token
-symbol = "NVDA"
+symbol = "APPL"
 start_date = "2025-01-01"
 end_date = "2025-04-01"
 
