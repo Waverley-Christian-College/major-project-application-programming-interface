@@ -11,13 +11,16 @@ end_date = "2025-04-01"
 # Asking user for how many companies
 companies = int(input("How many companies do you want to see? "))
 symbols = []
-# The .upper() code captilizes the users input
+# The .upper() code captilizes the users input so it can be able to read it
+# {i+1} adds one number for every company that the user input
 for i in range(companies):
     symbol = input(f"Enter a company #{i+1}: ").upper()
     symbols.append(symbol)
-
+# Plots a blank canvas
 fig, ax = plt.subplots(figsize=(12, 6))
 
+# Symbols puts the user input into a list
+# For every company symbol in the list of symbols, get the data for each company and plot them on one graph
 for symbol in symbols:
     url = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
     headers = {"Authorization": f"Token {API_TOKEN}"}
@@ -26,17 +29,17 @@ for symbol in symbols:
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
 
-    dates = [item["date"][:10] for item in data]
-    prices = [item["close"] for item in data]
+    dates = [item["date"][:10] for item in data] # Gets the dates from the data
+    prices = [item["close"] for item in data] # Gets the closing prices for each date
 
-    ax.plot(dates, prices, marker='o', label=symbol)
-# Plot
-title = " & ".join(symbols) + " Closing Prices"
-ax.set_title(title)
-ax.set_xlabel("Date")
-ax.set_ylabel("Close Price (USD)")
-ax.legend()
-ax.grid(True)
+    ax.plot(dates, prices, marker='o', label=symbol) # Plots the stock prices of the companies over a set amount of time
+# Plots title, axis, legend, grid, and dates
+title = " & ".join(symbols) + " Closing Prices"  # Adds closing prices at the end of the title
+ax.set_title(title)    # Plots the title
+ax.set_xlabel("Date")  # Plots the dates
+ax.set_ylabel("Close Price (USD)") 
+ax.legend()    # Adds the legend
+ax.grid(True)  # Adds the grid lines
 plt.xticks(rotation=45)
 plt.tight_layout()
     
