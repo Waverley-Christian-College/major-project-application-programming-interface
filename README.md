@@ -12,11 +12,27 @@
 
 Features:
 
-	- Searches for high volatility or low volatility companies: Bosco Cai
-	- Highlights high volatility and low volatility within a time period
-	- Show multiple graphs for users to compare volatility levels: Marcus M
-	- Comparing companies based on high volatility and low volatility 
-	- Volatility Scoring System: Andrew Carter
+	
+	- Show multiple graphs for users to compare volatility levels:
+	- Volatility Scoring System:
+
+## Show Multiple Graphs:
+
+This feature will ask how many companies the user wants to see, 
+
+then it will ask the user what companies they want to see based on how many companies the user wanted to see
+
+the program will generate and plot all the companies the user wants to see onto a graph
+
+the graph shows the prices of all the companies over a certain amount of time
+
+## VSS
+
+
+
+
+
+
 
 
 
