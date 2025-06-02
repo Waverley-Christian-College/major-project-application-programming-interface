@@ -40,9 +40,13 @@ print(f"Number of months checked: {len(data)}") # Counting the number of months 
 highs = [entry["high"] for entry in data] # Extracting all high prices from each entry
 lows = [entry["low"] for entry in data] # Extracting all low prices from each entry
 for entry in data:
-    get_each_month_price = f"Month: {entry['date'][:7]}, High: {entry['high']}, Low: {entry['low']}" # :7 means first 7 digits of the date (YYYY-MM) # entry high or low means highest and lowest prices for each month
-total_highs = sum(highs) # Summing all high prices
-total_lows = sum(lows) # Summing all low prices
+    month = entry["date"][:7]  # Extracting the month from the date
+    highs = entry["high"]  # Highest price for the month
+    lows = entry["low"]  # Lowest price for the month
+    volatility_price = highs - lows  # Calculating the volatility price for the month
+    print(f"Month: {month}, Volatility Price: {volatility_price}")
+
+
 
 
 
