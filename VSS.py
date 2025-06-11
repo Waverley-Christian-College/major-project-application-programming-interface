@@ -37,18 +37,11 @@ def hello():
     dates = [entry["date"][:10] for entry in data]
     closes = [entry["close"] for entry in data]
 
+
     # Algorithm for Volatility Scoring System (VSS)
     print(f"Number of months checked: {len(data)}") # Counting the number of months in the data
     highs = [entry["high"] for entry in data] # Extracting all high prices from each entry
     lows = [entry["low"] for entry in data] # Extracting all low prices from each entry
-    for entry in data:
-        month = entry["date"][:7]  # Extracting the month from the date
-        highs = entry["high"]  # Highest price for the month
-        lows = entry["low"]  # Lowest price for the month
-        volatility_price = highs - lows  # Calculating the volatility price for the month
-        volatility_add = highs + lows # Add up all volatility prices
-        #print(f"Month: {month}, Volatility Price: {volatility_price}")
-        
 
     # Calculate Average This will be comapred to the difference 
 
@@ -60,14 +53,7 @@ def hello():
 
     # Calculate the average: (sum of all highs + lows) / number of months
     average_highs_plus_lows = total_highs_plus_lows / len(data) #Divide by months 
-    #print(f"Total of (Highs + Lows): {total_highs_plus_lows:.2f}") #Debug
-    #print(month) #Debug
-    #print(f"Average of (Highs + Lows) / Months: {average_highs_plus_lows:.2f}")
-
     # Now calculate and print average minus volatility price for each month
-
-    # REinstating what was simillar to what was coded for the first part of the algorthim
-
 
     total_volatility_prices = 0
     for entry in data:
