@@ -55,7 +55,7 @@ def marcus():
 
     # Save figure
     plt.savefig("stock_comparison_tiingo.png")
-
+    print("Go to stock_comparison_tiingo.png to see the graphs")
     # This is my old line of code that I kept just in case anything wrong
     # The process of developing my code from only showing 2 graphs to any amount of companies the user asks for
     '''
