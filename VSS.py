@@ -48,12 +48,12 @@ def hello():
     # Calculate total of all (highs + lows) for each month
     total_highs_plus_lows = 0 #Reset Variable
     for entry in data:
-        highs_plus_lows = entry["high"] + entry["low"] #Add up the highs and the lows
-        total_highs_plus_lows += highs_plus_lows #Changing the Variable of total_highs_plus_lows by adding the values of highs_plus_lows together
+        highs_plus_lows = entry["high"] + entry["low"] # Add up the highs and the lows
+        total_highs_plus_lows += highs_plus_lows # Changing the Variable of total_highs_plus_lows by adding the values of highs_plus_lows together
 
     # Calculate the average: (sum of all highs + lows) / number of months
-    average_highs_plus_lows = total_highs_plus_lows / len(data) #Divide by months 
-    # Now calculate and print average minus volatility price for each month
+    average_highs_plus_lows = total_highs_plus_lows / len(data) # Divide by months 
+    # Calculate average minus volatility price for each month
 
     total_volatility_prices = 0
     for entry in data:
@@ -62,32 +62,28 @@ def hello():
         lows = entry["low"] # Checks lowest price each month
         volatility_price = highs - lows
         total_volatility_prices += volatility_price # Stores it into total_volatility_prices
-        average_minus_volatility = average_highs_plus_lows - volatility_price 
-        #print(f"Month: {month}, Volatility Price: {volatility_price:.2f}, Average - Volatility: {average_minus_volatility:.2f}")
+        #average_minus_volatility = average_highs_plus_lows - volatility_price 
+        
 
     # Calculate sum of all volatility prices divided by months
     average_volatility = total_volatility_prices / len(data)
-    print(f"Volatility has gone up from the average of about {average_volatility:.2f}")
+    print(f"The price has differed about {average_volatility:.2f} from the average price of {average_highs_plus_lows} over that period of time")
 
     # Introduce a scale
 
     if average_volatility <= 10:
-        print(f"With an average volatility of {average_volatility}, this is really low volatility")
         time.sleep(1)
         print("0-10 is really low volatility you will not make that much money")
 
     elif average_volatility <= 20:
-        print(f"With an average volatility of {average_volatility}, this is low volatility")
         time.sleep(1)
         print("10-20 is low volatility you would've/will not make that much money back then in the long term")
 
     elif average_volatility <= 80:
-        print(f"With an average volatility of {average_volatility}, this is medium volatility")
         time.sleep(1)
         print("20-80 is fluctulating volatility where it was/is the best time to invest on a small risk scale")
 
     elif average_volatility > 80: 
-        print(f"With an average volatility of {average_volatility}, this is high volatility")
         time.sleep(1)
         print("80> the volatility is high: Invest/Invested on high risk and you will/would've made or lost alot of money")
 
