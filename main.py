@@ -1,6 +1,4 @@
 import time 
-import VSS
-import showGraphs
 # This file is the src for user input 
 # This is where the user will use the program
 
@@ -9,30 +7,17 @@ import showGraphs
 # print(company)
 
 # Define Functions
-def VSSFunction():
+
+def showMultipleGraphsFeature():
+
     #Put call tiingo.py code
-    VSS.hello()
-
-def SMH():
-
-     #Put call tiingo.py code
     print("hello2")
-
-    showGraphs.marcus()
-
-
-
     
 
-def VSSFunction():
+def VSS():
     #Put call tiingo.py code
-    VSS.hello()
+    print("hello")
 
-def SMH():
-
-    #Put call tiingo.py code
-    print("hello2")
-    showGraphs.marcus()
 # Ask the users name
 userName = input("Enter your name? ")
 
@@ -49,27 +34,20 @@ userWantsToSee = input("What do you want to see? ")
 
 if userWantsToSee == "Our Features": # Ask the user what feature they want to use
 
-    print("Show multiple graphs (Type SMG)")
+    print("Show multiple graphs")
     time.sleep(1)
-    print("Volatility Scoring System (Type VSS)")
+    print("Volatility Scoring System")
     time.sleep(2)
-    desired_feature = input("What do you you want to use? ")
+    desired_feature = input("What feature do you want to use? ")
 
-    if desired_feature == "ok":
-        print("yaysss")
+    if desired_feature == "Show multiple graphs" or "SMM": #SMM is for debugging
 
-    
-    elif desired_feature == "VSS": #VSS is for debugging 
-        
-        VSSFunction()
+        showMultipleGraphsFeature()
+    elif desired_feature == "Volatility Scoring System" or "VSS": #VSS is for debugging 
 
-    elif desired_feature == "SMG":
-        
-        
-        SMH()
-
-
-    
+        VSS()
+    else:
+        print("That is not a feature")
 
 
 
