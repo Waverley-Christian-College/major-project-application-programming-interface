@@ -1,42 +1,32 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/9x6qoLrK)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19374609)
-# 📈 Volatility Tracker
 
+## **The Ultimate Volatility Tracker by Marcus, Bosco & Andrew**
 
+What does this Feature do?
 
-
-## Goal: To show and compare certain companies high volatility and low volatility and help users to make decisions
-
-## IMPORTANT: The tool ISN'T making decisions for users. It is used to HELP people make decisions.
-
+This tracker is designed to help compare the Volatility between different companies you desire, as well as our very own Volatility Scoring System, which can show how high or low the volatility is
 
 Features:
 
-	
-	- Show multiple graphs for users to compare volatility levels:
-	- Volatility Scoring System:
+**Show multiple graphs**
 
-## Show Multiple Graphs:
+Programmed by Marcus
 
-This feature will ask how many companies the user wants to see, 
+This feature asks the user how many companies they want to see; in regard to that, the feature will ask the user what companies they want to see. Then the computer will generate a graph for the user to look at that shows the prices of all those companies over a certain period of time.
 
-then it will ask the user what companies they want to see based on how many companies the user wanted to see
+**Volatility Scoring System**
 
-the program will generate and plot all the companies the user wants to see onto a graph
+Programmed by Bosco, Algorithm by Andrew
 
-the graph shows the prices of all the companies over a certain amount of time
+This feature asks for what company and between which the user wants to see. Through a really complicated algorithm, the feature will calculate aver average difference in prices over the months and the average share price over the months. This will then tell the user how much, on average, the prices had deviated over the months, and by using our scoring table, you can tell how high or low the volatility was over that period.
 
-## VSS
+## **How to Run the Program**
 
-
-
-
-
-
-
-
-
-## The tool will not only help users highlight significant stock prices changes, it will also give the user insights and visualisation tools
-
-
-
+1.  Run the “main.py” script
+   
+2.  You will then be prompted to enter your name
+   
+3.  The feature will then give you two options, one will take you to the features and the other will tell you about us.
+   
+4.  Selecting Features will prompt you to our two features, “Show Multiple Graphs” and “Volatility Scoring System.”
+   
+5.  Prompting either will execute the scripts that program the Feature.
