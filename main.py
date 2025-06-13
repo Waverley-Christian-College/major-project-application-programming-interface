@@ -10,29 +10,16 @@ import showGraphs
 
 # Define Functions
 def VSSFunction():
-    #Put call tiingo.py code
-    VSS.hello()
-
-def SMH():
-
-     #Put call tiingo.py code
-    print("hello2")
-
-    showGraphs.marcus()
-
-
-
     
-
-def VSSFunction():
-    #Put call tiingo.py code
     VSS.hello()
 
 def SMH():
 
-    #Put call tiingo.py code
-    print("hello2")
     showGraphs.marcus()
+
+
+
+
 # Ask the users name
 userName = input("Enter your name? ")
 
@@ -54,7 +41,7 @@ if userWantsToSee == "Our Features": # Ask the user what feature they want to us
     print("Volatility Scoring System (Type VSS)")
     time.sleep(2)
     desired_feature = input("What do you you want to use? ")
-
+#This, I don't know, but this works, but when either one of the elifs becomes an if, that statement was always true no matter the input
     if desired_feature == "ok":
         print("yaysss")
 
